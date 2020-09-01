@@ -1,0 +1,152 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace GVSGB
+{
+    public class DrawPentagram : Singleton<DrawPentagram>
+    {
+        #region private fields
+        LineRenderer drawingLine;
+        MiniGameState myState=MiniGameState.NOTSTARTED;
+        PentagramPoint[] ConnectedToPoints;
+        #endregion
+        #region public fields
+        public PentagramPoint[] AllPoints;
+        public PentagramPoint[] PointsToConnect;
+        public GameObject ImageBeingDrawn;
+        public PentagramPoint startPoint;
+        public PentagramPoint endPoint;
+        public Dictionary<PentagramPoint, PentagramPoint> ConnectionPattern;
+        public GameObject SuccessPanel;
+        public GameObject StartPanel;
+
+        #endregion
+        #region properties
+        public bool MouseHeldDown
+        {
+            get => mouseHeldDown;
+
+
+            set
+            {
+                if (value == false)
+                {
+                    //delete existing line
+                }
+
+                mouseHeldDown = value;
+            }
+
+
+        }
+
+        bool mouseHeldDown;
+        #endregion
+
+        #region game logic methods
+
+        void RandomlyConnectPoints()
+        {
+            int randomConnectNumber = UnityEngine.Random.Range(0, 3);
+            for (int i = 0; i < randomConnectNumber; i++)
+            {
+                int val = (Random.Range(0, 6));
+                if (ConnectionPattern.ContainsKey(AllPoints[val]) && AllPoints[val].ConnectedTo_Next == false)
+                {
+                    PentagramPoint.ConnectPoints(ImageBeingDrawn, AllPoints[val], ConnectionPattern[AllPoints[val]], transform);
+
+                    AllPoints[val].ConnectedTo_Next = true;
+
+                }
+
+            }
+        }
+        bool Is_Allconnected()
+        {
+            bool ret = true;
+            foreach (PentagramPoint p in AllPoints)
+            {
+                ret &= p.ConnectedTo_Next;
+            }
+            return ret;
+        }
+        void SetUp()
+        {
+            StartPanel.SetActive(false);
+            ConnectionPattern = new Dictionary<PentagramPoint, PentagramPoint>();
+            drawingLine = Instantiate(ImageBeingDrawn, transform).GetComponent<LineRenderer>();
+
+            for (int i = 0, j = 2; i < 6; i++, j++)
+            {
+                if (j == 6)
+                {
+                    j = 0;
+                }
+
+                AllPoints[i].gameObject.SetActive(true);
+                ConnectionPattern.Add(AllPoints[i], AllPoints[j]);
+
+                RandomlyConnectPoints();
+            }
+        }
+        #endregion
+
+        #region unity methods
+        private void Start()
+        {
+            StartPanel.SetActive(true);
+
+        }
+        void Update()
+        {
+            if (Input.GetMouseButtonDown(0) && myState != MiniGameState.INPROGRESS)
+            {
+                myState = MiniGameState.INPROGRESS;
+                SetUp();
+            }
+            if (myState == MiniGameState.INPROGRESS)
+            {
+                if (Input.GetMouseButtonUp(0))
+                {
+                    MouseHeldDown = false;
+                    drawingLine.SetPosition(0, Vector3.zero);
+                    drawingLine.SetPosition(1, Vector3.zero);
+                    drawingLine.enabled = false;
+                }
+                if (mouseHeldDown == true && Input.GetMouseButton(0))
+                {
+                    drawingLine.enabled = true;
+                    drawingLine.SetPosition(0, startPoint.transform.position);
+                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mousePos.z = 0;
+                    drawingLine.SetPosition(1, mousePos);
+                }
+                if (!mouseHeldDown)
+                {
+                    if (startPoint != endPoint && startPoint != null && endPoint != null)
+                    {
+                        if (startPoint.ConnectedTo_Next == false)
+                        {
+
+                            if (ConnectionPattern[startPoint] == endPoint)
+                            {
+                                PentagramPoint.ConnectPoints(ImageBeingDrawn, startPoint, endPoint, transform);
+                                startPoint.ConnectedTo_Next = true;
+                                if (Is_Allconnected())
+                                {
+                                    myState = MiniGameState.FINISHED;
+                                    SuccessPanel.SetActive(true);
+                                }
+                            }
+                        }
+                        startPoint = null;
+                        endPoint = null;
+                    }
+                }
+            }
+
+        }
+        #endregion
+    }
+}
