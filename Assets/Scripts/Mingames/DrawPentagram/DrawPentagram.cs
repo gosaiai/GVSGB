@@ -8,7 +8,7 @@ namespace GVSGB
     {
         #region private fields
         LineRenderer drawingLine;
-        MiniGameState myState=MiniGameState.NOTSTARTED;
+        MingameBase miniGame;
         PentagramPoint[] ConnectedToPoints;
         #endregion
         #region public fields
@@ -96,16 +96,18 @@ namespace GVSGB
         private void Start()
         {
             StartPanel.SetActive(true);
+            miniGame = new MingameBase();
+            miniGame.MyState=MiniGameState.NOTSTARTED;
 
         }
         void Update()
         {
-            if (Input.GetMouseButtonDown(0) && myState != MiniGameState.INPROGRESS)
+            if (Input.GetMouseButtonDown(0) && miniGame.MyState != MiniGameState.INPROGRESS)
             {
-                myState = MiniGameState.INPROGRESS;
+                miniGame.MyState = MiniGameState.INPROGRESS;
                 SetUp();
             }
-            if (myState == MiniGameState.INPROGRESS)
+            if (miniGame.MyState == MiniGameState.INPROGRESS)
             {
                 if (Input.GetMouseButtonUp(0))
                 {
@@ -135,7 +137,7 @@ namespace GVSGB
                                 startPoint.ConnectedTo_Next = true;
                                 if (Is_Allconnected())
                                 {
-                                    myState = MiniGameState.FINISHED;
+                                    miniGame.MyState = MiniGameState.FINISHED;
                                     SuccessPanel.SetActive(true);
                                 }
                             }
