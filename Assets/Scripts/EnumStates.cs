@@ -9,3 +9,9 @@ public enum MiniGameState
 
 }
 
+public enum  TicTacToeBox
+{
+    EMPTY,
+    X,
+    O
+}

@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace GVSGB
 {
+    [RequireComponent(typeof(BoxCollider2D))]
     public class NumberTile : MonoBehaviour
     {
 
