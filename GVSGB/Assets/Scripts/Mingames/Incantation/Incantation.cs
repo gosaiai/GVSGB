@@ -41,7 +41,7 @@ namespace GVSGB
         float MinDistanceBetweenPipes;
         float PipeMovementSpeed;
         float currentScore = 0;
-        int ScoreToGet = 10;
+        int ScoreToGet = 3;
         #endregion
         #region public fields
         public Transform StartPos;

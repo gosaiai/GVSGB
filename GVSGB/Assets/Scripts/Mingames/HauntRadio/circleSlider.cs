@@ -1,48 +1,89 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Assertions.Must;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
-public class circleSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+namespace GVSGB
 {
-    [SerializeField] Transform handle;
-    [SerializeField] public float rotateSpeed;
-    [SerializeField] public bool isPressed;
-    [SerializeField] public AudioSource audioSource;
-    Transform angle;
 
-    public void Start()
-    {
-       
-    }
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        isPressed = true;
-    }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public class circleSlider : MonoBehaviour
     {
-        isPressed = false;
-    }
+        [SerializeField] public GameObject handle;
+        private GameObject instantiatedHandle;
+        [SerializeField] public float rotateSpeed;
+        [SerializeField] public bool isPressed;
+        [SerializeField] public AudioSource audioSource;
+        [SerializeField] Vector3 spawnArea;
 
-    public void PlayAudio()
-    {
-        audioSource.Play();
-    }
+        [SerializeField] MiniGameState mystate = MiniGameState.NOTSTARTED;
+        public AudioClip[] frequencies;
+        public AudioClip tobeplayed;
+        public AudioClip mainSound;
+        MingameBase hauntRadio;
 
-    public void Update()
-    {
-        if (isPressed)
+
+        public void Start()
         {
-            handle.transform.Rotate(Vector3.forward * rotateSpeed);
+            hauntRadio = new MingameBase();
             audioSource = GetComponent<AudioSource>();
-            audioSource.Play(0);
+            instantiatedHandle = Instantiate(handle, spawnArea, Quaternion.identity);
         }
-        else
+
+        public void PlayRandomSound()
         {
-            audioSource.Pause();
+            int index = Random.Range(0, frequencies.Length);
+            tobeplayed = frequencies[index];
+            audioSource.clip = tobeplayed;
+            audioSource.Play();
+        }
+
+        public void Update()
+        {
+            if (Input.GetMouseButton(0))
+            {
+                if (hauntRadio.MyState == MiniGameState.NOTSTARTED)
+                {
+                    hauntRadio.MyState = MiniGameState.INPROGRESS;
+                    
+                }
+
+                if (hauntRadio.MyState == MiniGameState.INPROGRESS)
+                {
+                    instantiatedHandle.transform.Rotate(Vector3.forward * rotateSpeed);
+                    float angle = instantiatedHandle.transform.eulerAngles.z;
+
+                    if (angle > 0 && angle < 90)
+                    {
+                        PlayRandomSound();
+                    }
+
+                    else if (angle > 90 && angle < 180)
+                    {
+                        PlayRandomSound();
+                    }
+                    else if (angle > 180 && angle < 240)
+                    {
+                        PlayRandomSound();
+                    }
+                    else if (angle > 240 && angle < 360)
+                    {
+                        PlayRandomSound();
+                    }
+                    else if (tobeplayed = mainSound)
+                    {
+                        Debug.Log("complete");
+                    }
+                }
+                   
+                //transform.localRotation = Quaternion.Euler(0, 0, angle);
+            }
+            else
+            {
+
+            }
         }
     }
 }

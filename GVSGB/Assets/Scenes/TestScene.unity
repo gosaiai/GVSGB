@@ -995,6 +995,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrawPentagram
       objectReference: {fileID: 0}
+    - target: {fileID: 6723486310419095651, guid: 37f171d263f359f4f97606c2c24f80d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6723486310419095653, guid: 37f171d263f359f4f97606c2c24f80d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1133,6 +1138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Incantation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701883636395552471, guid: 74ab11ddbcdc2354e89e86ccd67ec0cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ab11ddbcdc2354e89e86ccd67ec0cd, type: 3}
