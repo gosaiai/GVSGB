@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 1420467024}
   - component: {fileID: 1420467025}
   m_Layer: 0
-  m_Name: area
+  m_Name: HauntRadio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,21 +311,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1420467022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3f20b81ae9af794db12f540641f24b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 71f679813f9ee0e46850a32522a3796b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handle: {fileID: 7648610893690559032, guid: bdca5c563cbbfed469c0d9eaed64bc91, type: 3}
+  handle: {fileID: 5241482159406604630, guid: 8e325e61cc6a8ad43878c04d59b26b99, type: 3}
   rotateSpeed: 1
   isPressed: 0
   audioSource: {fileID: 1420467025}
   spawnArea: {x: 0, y: 0, z: 0}
   mystate: 0
-  frequency1: {fileID: 8300000, guid: 31f1993aa83146c4a9cc12ff1bf07f76, type: 3}
-  frequency2: {fileID: 8300000, guid: c7ca64dcc81f6514abc3fc718e6f33ea, type: 3}
-  frequency3: {fileID: 8300000, guid: f4ab7ac4ff5ae1d4b85002e44562b533, type: 3}
-  frequency4: {fileID: 8300000, guid: 436fdeaf3e9d01c4ca7b9afc4a7aabe6, type: 3}
-  soundToget: {fileID: 1421760447342056834, guid: 2f87b6a8905c2494eb4d1e1bd0d6dc0e,
-    type: 3}
+  frequencies:
+  - {fileID: 8300000, guid: f745df1f91b645549805867d0c3557d2, type: 3}
+  - {fileID: 8300000, guid: 9f37e0423e63d1f4c9e310900f3a6d3f, type: 3}
+  - {fileID: 8300000, guid: 02db9d33ac642dc4c9d16238779e2d36, type: 3}
+  - {fileID: 8300000, guid: d7301590315d38a429e1718bedfa792f, type: 3}
+  tobeplayed: {fileID: 0}
+  mainSound: {fileID: 8300000, guid: d7301590315d38a429e1718bedfa792f, type: 3}
 --- !u!82 &1420467025
 AudioSource:
   m_ObjectHideFlags: 0
@@ -338,7 +339,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.121
   m_Pitch: 1
   Loop: 0
   Mute: 0
