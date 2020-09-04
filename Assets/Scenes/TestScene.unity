@@ -1322,6 +1322,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FixPotrait
       objectReference: {fileID: 0}
+    - target: {fileID: 7875474124423037944, guid: a39291b6dd869444ca3b3fe376d13873,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7875474124423037945, guid: a39291b6dd869444ca3b3fe376d13873,
         type: 3}
       propertyPath: StartPanel
