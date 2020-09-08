@@ -39,9 +39,10 @@ namespace GVSGB
 
             if(miniGame.MyState == MiniGameState.INPROGRESS)
             {
+                Vector2 ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
                 dirX = Input.acceleration.x * moveSpeed;
                 dirY = Input.acceleration.y * moveSpeed;                
-                transform.position = new Vector2(Mathf.Clamp(transform.position.x, -7.41f, 7.41f), Mathf.Clamp(transform.position.y, -3.5f, 3.5f));
+                transform.position = new Vector2(Mathf.Clamp(transform.position.x, -ScreenBounds.x, ScreenBounds.x), Mathf.Clamp(transform.position.y, -ScreenBounds.y,ScreenBounds.y));
             }
         }
 
