@@ -660,7 +660,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPanel: {fileID: 811100401}
+  successPanel: {fileID: 0}
+  failPanel: {fileID: 0}
   book: {fileID: 1676268835}
+  moveSpeed: 10
 --- !u!4 &709369155
 Transform:
   m_ObjectHideFlags: 0
@@ -1447,7 +1450,7 @@ PrefabInstance:
     - target: {fileID: 2985790006123476225, guid: 7feb8f80b91545542b450eb1865212d9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2985790006123476226, guid: 7feb8f80b91545542b450eb1865212d9,
         type: 3}
