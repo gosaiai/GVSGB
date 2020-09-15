@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GVSGB
 {
-    [RequireComponent(typeof(BoxCollider2D))]
+    [RequireComponent(typeof(BoxCollider2D))]  
     public class Box : MonoBehaviour
     {
         #region public Fields
