@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Com.Trellis.G_VS_GB
+namespace GVSGB
 {
     public class CameraFollow : MonoBehaviour
     {
