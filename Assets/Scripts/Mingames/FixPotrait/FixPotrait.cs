@@ -59,9 +59,9 @@ namespace GVSGB
         {
 
             if (is_left)
-                RotatingObj.transform.Rotate(0, 0, 1);
+                RotatingObj.transform.Rotate(0, 0, 0.5f);
             else
-                RotatingObj.transform.Rotate(0, 0, -1);
+                RotatingObj.transform.Rotate(0, 0, -0.5f);
 
             //RotatingObj.transform.localRotation = Quaternion.Euler(RotatingObj.transform.localRotation.x, RotatingObj.transform.localRotation.y, RotatingObj.transform.localRotation.z - 1f);
 
