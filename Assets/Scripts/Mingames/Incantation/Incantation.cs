@@ -21,7 +21,7 @@ namespace GVSGB
         [SerializeField]
         GameObject Bird;
         [SerializeField]
-        GameObject Pipes;
+        GameObject[] Pipes;
 
         private GameObject activeBird;
 
@@ -33,7 +33,7 @@ namespace GVSGB
         float Gravity;
 
         [SerializeField]
-        const float SizeToFillScreen = 3;
+        const float SizeToFillScreen = 7;
         [SerializeField]
         float MaxDistanceBetweenPipes;
 
@@ -59,7 +59,7 @@ namespace GVSGB
         void Start()
         {
             minigame = new MingameBase();
-            PipeMovementSpeed = Pipes.GetComponent<PipeMovement>().speed;
+            PipeMovementSpeed = Pipes[0].GetComponent<PipeMovement>().speed;
             if (StartPos == null)
             {
                 throw new System.NullReferenceException("StarPos not  set");
@@ -105,27 +105,31 @@ namespace GVSGB
         }
         void CreatePipes()
         {
+
             float minGap = 1f;
             Vector2 ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
 
-            GameObject pipe1 = Instantiate(Pipes, transform);
+            GameObject pipe1 = Instantiate(Pipes[0], transform);
             pipe1.transform.position = new Vector3(ScreenBounds.x, ScreenBounds.y, 0f);
 
-            GameObject pipe2 = Instantiate(Pipes, transform);
+            GameObject pipe2 = Instantiate(Pipes[1], transform);
             pipe2.transform.position = new Vector3(ScreenBounds.x, -ScreenBounds.y, 0f);
             pipe2.transform.localScale = new Vector3(pipe2.transform.localScale.x, -pipe2.transform.localScale.y, pipe2.transform.localScale.z);
 
+            
             float val = GetOneScaleValue(1, SizeToFillScreen);
 
             if (UnityEngine.Random.Range(0, 2) == 0)
             {
                 pipe1.transform.localScale = new Vector2(pipe1.transform.localScale.x, val);
                 pipe2.transform.localScale = new Vector2(pipe2.transform.localScale.x, -(SizeToFillScreen - val));
+               
             }
             else
             {
                 pipe1.transform.localScale = new Vector2(pipe1.transform.localScale.x, (SizeToFillScreen - val));
                 pipe2.transform.localScale = new Vector2(pipe2.transform.localScale.x, -val);
+                
             }
             //  pipe1.transform.Translate(Vector3.left* PipeSpeed);
         }

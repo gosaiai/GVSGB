@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ namespace GVSGB
         private TicTacToeBox holding = TicTacToeBox.EMPTY;
         public bool IsHolding = false;
         public SpriteRenderer rend;
+        public Sprite bone;
+        public Sprite skull;
 
         public TicTacToeBox Holding
         {
@@ -32,16 +35,17 @@ namespace GVSGB
             {
 
                 case TicTacToeBox.X:
-                    rend.color = Color.red;
+                    //rend.color = Color.red;
+                    GetComponent<SpriteRenderer>().sprite = bone;
 
                     break;
                 case TicTacToeBox.O:
-                    rend.color = Color.green;
-
+                    //rend.color = Color.green;
+                    rend.GetComponent<SpriteRenderer>().sprite = skull;
                     break;
 
                 default:
-                    rend.color = Color.white;
+                   rend.color = Color.white;
                     break;
 
             }

@@ -17,10 +17,12 @@ namespace GVSGB
         float dirX;
         float dirY;
         public float moveSpeed = 10f;
-        
+        private Vector2 ScreenBounds;
 
         void Start()
         {
+             ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+
             rb = book.GetComponent<Rigidbody2D>();
             startPanel.SetActive(true);
         }
@@ -39,17 +41,18 @@ namespace GVSGB
 
             if(miniGame.MyState == MiniGameState.INPROGRESS)
             {
-                Vector2 ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
                 dirX = Input.acceleration.x * moveSpeed;
                 dirY = Input.acceleration.y * moveSpeed;                
-                transform.position = new Vector2(Mathf.Clamp(transform.position.x, -ScreenBounds.x, ScreenBounds.x), Mathf.Clamp(transform.position.y, -ScreenBounds.y,ScreenBounds.y));
+                
             }
         }
 
         private void FixedUpdate()
         {
             rb.velocity = new Vector2(dirX,dirY);
+            rb.position = new Vector2(Mathf.Clamp(rb.position.x, -ScreenBounds.x, ScreenBounds.x), Mathf.Clamp(rb.position.y, -ScreenBounds.y, ScreenBounds.y));
         }
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

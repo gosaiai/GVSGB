@@ -10,6 +10,7 @@ namespace GVSGB
         public GameObject StarGamePanel;
         public GameObject SuccessPanel;
         public MingameBase myMinigame;
+        public GameObject FailPanel;
 
         public int oldNumber = 0;
         public NumberTile[] AllNumbers;
@@ -58,7 +59,7 @@ namespace GVSGB
             {
                 number.ChangeColor(Color.red);
                 myMinigame.MyState = MiniGameState.FAILED;
-
+                FailPanel.SetActive(true);
 
             }
             if (number.myNumber - oldNumber == 1)
