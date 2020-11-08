@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Bird
   - TargetArea
+  - Pentagram
+  - Toilet
+  - Clock
+  - Sins
   layers:
   - Default
   - TransparentFX

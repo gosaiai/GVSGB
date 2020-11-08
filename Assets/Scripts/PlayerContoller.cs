@@ -25,7 +25,7 @@ namespace GVSGB
         ///  the joy  stick  in the scene
         /// </summary>
         [SerializeField]
-        Joystick activeJoyStick;
+        public Joystick activeJoyStick;
         /// <summary>
         /// Obj 2D collider
         /// </summary>

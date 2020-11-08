@@ -20,7 +20,7 @@ namespace GVSGB
         Transform targetTransform;
         Renderer targetRenderer;
         CanvasGroup _canvasGroup;
-        Vector3 targetPosition;
+        public Vector3 targetPosition;
         #endregion
         #region Public Fields
         [Tooltip("Pixel offset from the player target")]
@@ -61,6 +61,8 @@ namespace GVSGB
                 targetPosition.y += characterControllerHeight;
                 this.transform.position = Camera.main.WorldToScreenPoint(targetPosition) + screenOffset;
             }
+            
+            
         }
         #endregion
 

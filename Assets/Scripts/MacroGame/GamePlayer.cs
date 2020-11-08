@@ -23,6 +23,8 @@ namespace GVSGB
         //public string NickName;
         public Button CooldownButton;
         private GameObject InstantiatedPanel;
+        [SerializeField]
+        GameObject minigames;
         public CharecterClass CharecterClass { get => charecterClass; set { SwitchClass(value); } }
 
         public PlayerState PlayerState { get => playerState; set { ApplyState(value); } }
