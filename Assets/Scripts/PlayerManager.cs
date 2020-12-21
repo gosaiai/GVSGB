@@ -18,11 +18,12 @@ namespace GVSGB
         // Start is called before the first frame update
         void Start()
         {
-
+            Vector3 pos = new Vector3(0f, 0f, -13f);
             CameraFollow _cameraWork = this.gameObject.GetComponent<CameraFollow>();
             if (PlayerUiPrefab != null)
             {
-                GameObject _uiGo = Instantiate(PlayerUiPrefab);
+                
+                GameObject _uiGo = Instantiate(PlayerUiPrefab, transform.position + pos, Quaternion.identity);
                 _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
             }
             else

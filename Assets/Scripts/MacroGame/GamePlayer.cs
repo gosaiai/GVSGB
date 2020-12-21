@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
+using Photon.Realtime;
 
 namespace GVSGB
 {
@@ -15,16 +16,19 @@ namespace GVSGB
         Rigidbody2D rb2d;
         Collider2D col2d;
         private PlayerState playerState = PlayerState.DEAD;
-        private CharecterClass charecterClass = CharecterClass.GHOST;
+        private CharecterClass charecterClass;// = CharecterClass.GHOST;
         #endregion
         #region  public fields
         public Joystick curJoystick;
         public GameObject UI_Panel_Prefab_Ghost;
+        public GameObject UI_Panel_Prefab_Ghostbuster;
         //public string NickName;
         public Button CooldownButton;
         private GameObject InstantiatedPanel;
         [SerializeField]
         GameObject minigames;
+        [SerializeField]
+        Animator myAnim;
         public CharecterClass CharecterClass { get => charecterClass; set { SwitchClass(value); } }
 
         public PlayerState PlayerState { get => playerState; set { ApplyState(value); } }
@@ -35,7 +39,7 @@ namespace GVSGB
         {
             rb2d = GetComponent<Rigidbody2D>();
             col2d = GetComponent<Collider2D>();
-
+            charecterClass = CharecterClass.GHOSTBUSTER;
 
         }
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -61,8 +65,31 @@ namespace GVSGB
         }
         void Start()
         {
-            if (photonView.IsMine)
+            if (charecterClass != CharecterClass.GHOSTBUSTER)
             {
+                charecterClass = CharecterClass.GHOSTBUSTER;
+                if (photonView.IsMine)
+                {
+                    myAnim = gameObject.GetComponent<Animator>();
+                    //   GameObject temp= Instantiate(prefabInstatiate);
+                    // temp.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
+
+
+                    PlayerState = PlayerState.ALIVE;
+                    curJoystick = FindObjectOfType<Joystick>();
+
+                    InstantiatedPanel = Instantiate(UI_Panel_Prefab_Ghost, GameObject.Find("SafeArea").transform);
+
+
+                    CooldownButton = InstantiatedPanel.transform.GetChild(0).GetComponent<Button>();
+                    CooldownButton.onClick.AddListener(ActivatePhase);
+                }
+                
+            }
+            else 
+            {
+                charecterClass = CharecterClass.GHOST;
+                myAnim = gameObject.GetComponent<Animator>();
                 //   GameObject temp= Instantiate(prefabInstatiate);
                 // temp.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
 
@@ -70,12 +97,14 @@ namespace GVSGB
                 PlayerState = PlayerState.ALIVE;
                 curJoystick = FindObjectOfType<Joystick>();
 
-                InstantiatedPanel = Instantiate(UI_Panel_Prefab_Ghost, GameObject.Find("SafeArea").transform);
+                InstantiatedPanel = Instantiate(UI_Panel_Prefab_Ghostbuster, GameObject.Find("SafeArea").transform);
 
 
                 CooldownButton = InstantiatedPanel.transform.GetChild(0).GetComponent<Button>();
                 CooldownButton.onClick.AddListener(ActivatePhase);
             }
+
+
             CameraFollow _cameraWork = this.gameObject.GetComponent<CameraFollow>();
 
 
@@ -132,12 +161,22 @@ namespace GVSGB
         {
 
         }
-        void SwitchClass(CharecterClass val)
+        public void SwitchClass(CharecterClass val)
         {
-            charecterClass = val;
-            /// switch animation parameters
-            /// switch sprites
-            /// switch powers
+            if (CharecterClass.GHOSTBUSTER == val)
+            {
+                charecterClass = CharecterClass.GHOSTBUSTER;
+            }
+            else
+            {
+                charecterClass = CharecterClass.GHOSTBUSTER;
+            }
+            //charecterClass = val;
+            // myAnim.runtimeAnimatorController = Resources.Load("Animation/buster sprite sheet") as RuntimeAnimatorController;
+            // Animator animator = Player 
+            // switch animation parameters
+            // switch sprites
+            // switch powers
 
 
         }
