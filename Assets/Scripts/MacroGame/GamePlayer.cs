@@ -65,30 +65,8 @@ namespace GVSGB
         }
         void Start()
         {
-            if (charecterClass != CharecterClass.GHOSTBUSTER)
+            if (photonView.IsMine)
             {
-                charecterClass = CharecterClass.GHOSTBUSTER;
-                if (photonView.IsMine)
-                {
-                    myAnim = gameObject.GetComponent<Animator>();
-                    //   GameObject temp= Instantiate(prefabInstatiate);
-                    // temp.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
-
-
-                    PlayerState = PlayerState.ALIVE;
-                    curJoystick = FindObjectOfType<Joystick>();
-
-                    InstantiatedPanel = Instantiate(UI_Panel_Prefab_Ghost, GameObject.Find("SafeArea").transform);
-
-
-                    CooldownButton = InstantiatedPanel.transform.GetChild(0).GetComponent<Button>();
-                    CooldownButton.onClick.AddListener(ActivatePhase);
-                }
-                
-            }
-            else 
-            {
-                charecterClass = CharecterClass.GHOST;
                 myAnim = gameObject.GetComponent<Animator>();
                 //   GameObject temp= Instantiate(prefabInstatiate);
                 // temp.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
@@ -97,13 +75,12 @@ namespace GVSGB
                 PlayerState = PlayerState.ALIVE;
                 curJoystick = FindObjectOfType<Joystick>();
 
-                InstantiatedPanel = Instantiate(UI_Panel_Prefab_Ghostbuster, GameObject.Find("SafeArea").transform);
+                InstantiatedPanel = Instantiate(UI_Panel_Prefab_Ghost, GameObject.Find("SafeArea").transform);
 
 
                 CooldownButton = InstantiatedPanel.transform.GetChild(0).GetComponent<Button>();
                 CooldownButton.onClick.AddListener(ActivatePhase);
             }
-
 
             CameraFollow _cameraWork = this.gameObject.GetComponent<CameraFollow>();
 

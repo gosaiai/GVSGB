@@ -16,10 +16,10 @@ namespace GVSGB
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
         //public GameObject busterPrefab;
+        
         #endregion
         GamePlayer[] gamePlayer;
         #region Photon Callbacks
-
 
         /// <summary>
         /// Called when the local player left the room. We need to load the launcher scene.
@@ -57,8 +57,10 @@ namespace GVSGB
 
         #endregion
         #region MonoBehaviour CallBacks
+        
         void Start()
         {
+            
             Instance = this;
             if (playerPrefab == null)
             {
@@ -70,6 +72,7 @@ namespace GVSGB
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                                       
                     PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, -14f), Quaternion.identity, 0);
                     //PhotonNetwork.Instantiate(this.busterPrefab.name, new Vector3(0f, 5f, -14f), Quaternion.identity, 0);
                 }
@@ -93,13 +96,11 @@ namespace GVSGB
         #endregion
         #region Photon Callbacks
 
-
+   
         public override void OnPlayerEnteredRoom(Player other)
         {
             Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
-            GamePlayer player1 = new GamePlayer();
-            player1.SwitchClass(CharecterClass.GHOSTBUSTER);
-            //other.SwitchClass(CharecterClass.GHOSTBUSTER);
+            
             //get id from other and get id from game player.photon component// and match those id then switch
             if (PhotonNetwork.IsMasterClient)
             {
