@@ -16,7 +16,7 @@ namespace GVSGB
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
         //public GameObject busterPrefab;
-        
+        public AudioClip pianoRoll;
         #endregion
         GamePlayer[] gamePlayer;
         #region Photon Callbacks
