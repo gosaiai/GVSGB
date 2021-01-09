@@ -10,6 +10,7 @@ TagManager:
   - Toilet
   - Clock
   - Sins
+  - Circle
   layers:
   - Default
   - TransparentFX

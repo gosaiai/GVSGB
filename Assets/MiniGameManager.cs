@@ -6,6 +6,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Mathematics;
+using UnityEditor;
+using UnityEngine.SocialPlatforms;
+using System.Threading;
 
 namespace GVSGB
 {
@@ -35,32 +39,81 @@ namespace GVSGB
         PhotonView mPV;
         [SerializeField]
         Button spookBtn;
-        
+
+        [SerializeField]
+
+        public Animator pianoAnimator;
+
+        public GameObject pianoKeyPos;
+        [SerializeField]
+        colorchangePiano colorchangescript;
+        [SerializeField]
+        GameObject circle;
+        public float Timer = 2f;
+        int count;
+
         // Start is called before the first frame update
         void Start()
         {
+            if (pianoAnimator == null)
+            {
+                pianoAnimator = GetComponent<Animator>();
+            }
 
-
+            //circle.SetActive(false);
             spookBtn.gameObject.SetActive(false);
 
             incantation.SetActive(false);
             Spookmeter.maxValue = 100f;
             Spookmeter.minValue = 0f;
+
         }
 
 
-        void Update()
+
+
+
+        void CircleDraw()
         {
-            // CameraFollow follow = Incantion.activeBird.gameObject.GetComponent<CameraFollow>();
-            spookTime();
 
-            //IncreaseSpooks();
+            pianoKey();
+            InvokeRepeating("pianoKey", 0, 5);
+            //
+            //Vector2 position = new Vector2(UnityEngine.Random.Range(0.77f, 0.77f), UnityEngine.Random.Range(0.89f, 0.89f));
+            //if (circle.transform.localScale >= new Vector3(UnityEngine.Random.Range(0.77f, 0.77f), UnityEngine.Random.Range(0.89f, 0.89f), 0))
+
+
+            //if ()
+            //{
+            //    Debug.Log("b");
+            //    Renderer rend = circle.GetComponent<Renderer>();
+            //    rend.material.color = Color.white;
+            //}
+
+        }
+        void pianoKey()
+        {
+
+
+            GameObject clone = Instantiate(Resources.Load("circle"), (new Vector3((UnityEngine.Random.Range(0, 7)), 1, 0)), pianoKeyPos.transform.rotation) as GameObject;
+           // Destroy(clone, 5f);
+            count = GameObject.FindGameObjectsWithTag("Circle").Length;
+            //colorchangescript = (colorchangePiano)circle.GetComponent(typeof(colorchangePiano));
+
+            if (count >= 3 && colorchangescript.ifHit != false)
+            {
+                CancelInvoke("pianoKey");
+                Debug.Log("hisdkfsjdkf");
+            }
+
+
+
         }
 
+        private void Update()
+        {
 
-
-
-
+        }
         public void IncreaseSpooks()
         {
 
@@ -68,7 +121,7 @@ namespace GVSGB
         }
         public void OnTriggerEnter2D(Collider2D collision)
         {
-             mPV = GetComponent<PhotonView>();
+            mPV = GetComponent<PhotonView>();
 
 
             if (mPV.IsMine)
@@ -84,7 +137,7 @@ namespace GVSGB
                     }
 
                     //SwitchTOMiniGame();
-                    //  AllMiniGames[0].game.SetActive(true);
+                    // AllMiniGames[0].game.SetActive(true);
                     //test[0].SetActive(true);
                     //DrawPentagram.Instance.gameObject.SetActive(true);
                     Debug.Log("game");
@@ -98,7 +151,7 @@ namespace GVSGB
                 }
             }
 
-            else if (!mPV.IsMine)   
+            else if (!mPV.IsMine)
             {
                 if (collision.gameObject.tag == "Player")
                 {
@@ -116,8 +169,9 @@ namespace GVSGB
         public void doSpook()
         {
             stick.gameObject.SetActive(false);
-
-
+            //colorchangescript = circle.GetComponent<colorchangePiano>();
+            //circle = GameObject.FindGameObjectWithTag("Circle");
+            CircleDraw();
             Debug.Log("spook");
             StartCoroutine(spookTime());
         }
@@ -125,12 +179,14 @@ namespace GVSGB
         IEnumerator spookTime()
         {
             SoundManager.PlaySound();
+
             yield return new WaitForSeconds(waitTime);
-            IncreaseSpooks();
             stick.gameObject.SetActive(true);
+            IncreaseSpooks();
         }
         public void startGame()
         {
+            //circle.SetActive(true);
             doSpook();
             //incantation.SetActive(true);
         }
