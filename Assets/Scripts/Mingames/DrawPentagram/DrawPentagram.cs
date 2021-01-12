@@ -18,8 +18,7 @@ namespace GVSGB
         public PentagramPoint startPoint;
         public PentagramPoint endPoint;
         public Dictionary<PentagramPoint, PentagramPoint> ConnectionPattern;
-        public GameObject SuccessPanel;
-        public GameObject StartPanel;
+       
 
         #endregion
         #region properties
@@ -73,7 +72,7 @@ namespace GVSGB
         }
         void SetUp()
         {
-            StartPanel.SetActive(false);
+           
             ConnectionPattern = new Dictionary<PentagramPoint, PentagramPoint>();
             drawingLine = Instantiate(ImageBeingDrawn, transform).GetComponent<LineRenderer>();
 
@@ -95,7 +94,7 @@ namespace GVSGB
         #region unity methods
         private void Start()
         {
-            StartPanel.SetActive(true);
+           
             miniGame = new MingameBase();
             miniGame.MyState=MiniGameState.NOTSTARTED;
 
@@ -138,7 +137,7 @@ namespace GVSGB
                                 if (Is_Allconnected())
                                 {
                                     miniGame.MyState = MiniGameState.FINISHED;
-                                    SuccessPanel.SetActive(true);
+                                    Debug.Log("horha");
                                 }
                             }
                         }

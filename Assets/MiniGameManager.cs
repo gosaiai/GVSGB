@@ -178,7 +178,7 @@ namespace GVSGB
 
         IEnumerator spookTime()
         {
-            SoundManager.PlaySound();
+            AudioManager.instance.PlaySound("PianoRoll");
 
             yield return new WaitForSeconds(waitTime);
             stick.gameObject.SetActive(true);
