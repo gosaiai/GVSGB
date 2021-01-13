@@ -11,6 +11,7 @@ TagManager:
   - Clock
   - Sins
   - Circle
+  - minigameManager
   layers:
   - Default
   - TransparentFX

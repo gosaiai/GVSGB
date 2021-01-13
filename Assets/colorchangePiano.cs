@@ -9,11 +9,17 @@ namespace GVSGB
     {
         private SpriteRenderer renderer;
         public bool ifHit = false;
-
+        MiniGameManager miniMangaer;
+        GameObject pianoRef;
+        public pianoRoll finishedstate;
+        MingameBase mingame;
         private void Start()
         {
             renderer = GetComponent<SpriteRenderer>();
-
+            pianoRef = GameObject.FindGameObjectWithTag("minigameManager");
+            miniMangaer = pianoRef.GetComponent<MiniGameManager>();
+            finishedstate = pianoRef.GetComponentInChildren<pianoRoll>();
+            mingame = new MingameBase();
         }
 
         public void checkIfPressed()
@@ -22,6 +28,14 @@ namespace GVSGB
             {
                 ifHit = true;
                 Debug.Log("Pressed primary button.");
+                
+                if (ifHit == true)
+                {
+                    AudioManager.instance.PlaySound("PianoRoll");
+                    miniMangaer.IncreaseSpooks();
+                    mingame.MyState = MiniGameState.FINISHED;
+                    //finishedstate.FinishedState();
+                }
             }
 
         }

@@ -91,6 +91,14 @@ namespace GVSGB
         }
         #endregion
 
+        public void startGame()
+        {
+            if (miniGame.MyState != MiniGameState.INPROGRESS)
+            {
+                miniGame.MyState = MiniGameState.INPROGRESS;
+                SetUp();
+            }
+        }
         #region unity methods
         private void Start()
         {
@@ -101,11 +109,7 @@ namespace GVSGB
         }
         void Update()
         {
-            if (Input.GetMouseButtonDown(0) && miniGame.MyState != MiniGameState.INPROGRESS)
-            {
-                miniGame.MyState = MiniGameState.INPROGRESS;
-                SetUp();
-            }
+           
             if (miniGame.MyState == MiniGameState.INPROGRESS)
             {
                 if (Input.GetMouseButtonUp(0))
