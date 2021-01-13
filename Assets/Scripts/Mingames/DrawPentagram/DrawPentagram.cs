@@ -18,8 +18,9 @@ namespace GVSGB
         public PentagramPoint startPoint;
         public PentagramPoint endPoint;
         public Dictionary<PentagramPoint, PentagramPoint> ConnectionPattern;
-       
-
+        public GameObject pentagram;
+        GameObject miniGameRef;
+        public MiniGameManager minimanager;
         #endregion
         #region properties
         public bool MouseHeldDown
@@ -93,11 +94,9 @@ namespace GVSGB
 
         public void startGame()
         {
-            if (miniGame.MyState != MiniGameState.INPROGRESS)
-            {
-                miniGame.MyState = MiniGameState.INPROGRESS;
-                SetUp();
-            }
+            pentagram.SetActive(true);
+            miniGameRef = GameObject.FindGameObjectWithTag("minigameManager");
+            minimanager = miniGameRef.GetComponent<MiniGameManager>();
         }
         #region unity methods
         private void Start()
@@ -109,7 +108,12 @@ namespace GVSGB
         }
         void Update()
         {
-           
+            if (miniGame.MyState != MiniGameState.INPROGRESS)
+            {
+                miniGame.MyState = MiniGameState.INPROGRESS;
+                SetUp();
+            }
+
             if (miniGame.MyState == MiniGameState.INPROGRESS)
             {
                 if (Input.GetMouseButtonUp(0))
@@ -142,6 +146,7 @@ namespace GVSGB
                                 {
                                     miniGame.MyState = MiniGameState.FINISHED;
                                     Debug.Log("horha");
+                                    minimanager.IncreaseSpooks();
                                 }
                             }
                         }
