@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.PlayerLoop;
 
 namespace GVSGB
 {
@@ -9,50 +11,36 @@ namespace GVSGB
     {
         private SpriteRenderer renderer;
         public bool ifHit = false;
-      //  MiniGameManager miniMangaer;
-       // GameObject pianoRef;
-       // public pianoRoll finishedstate;
+        bool pressed;
+        
         MingameBase mingame;
         private void Start()
         {
             renderer = GetComponent<SpriteRenderer>();
-            //pianoRef = GameObject.FindGameObjectWithTag("minigameManager");
-            //miniMangaer = pianoRef.GetComponent<MiniGameManager>();
-            //finishedstate = pianoRef.GetComponentInChildren<pianoRoll>();
             mingame = new MingameBase();
+            
         }
 
-        public void checkIfPressed()
+        private void Update()
         {
-            if (Input.anyKey)
+            if (renderer.color == Color.black && Input.anyKeyDown)
             {
-                ifHit = true;
-                Debug.Log("Pressed primary button.");
-                
-                if (ifHit == true)
+                AudioManager.instance.PlaySound("PianoRoll");
+                MiniGameManager.instance.IncreaseSpooks();
+                mingame.MyState = MiniGameState.FINISHED;
+                if (Input.anyKeyDown)
                 {
-                    AudioManager.instance.PlaySound("PianoRoll");
-                    MiniGameManager.instance.IncreaseSpooks();
-                    mingame.MyState = MiniGameState.FINISHED;
-                    //finishedstate.FinishedState();
+                    renderer.color = Color.white;
                 }
             }
 
         }
-
-
+       
+        
+      
         public void ColorChange()
         {
-            if (Input.GetKeyDown(0))
-            {
-                Debug.Log("hit");
-                ifHit = true;
-            }
-
-            if (ifHit == true)
-            {
-                Debug.Log("++");
-            }
+           
             renderer.color = Color.black;
         }
         public void stopColor()

@@ -391,21 +391,14 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 2.5833333
+  - time: 2.0333333
     functionName: ColorChange
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.75
-    functionName: checkIfPressed
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 2.9333334
+  - time: 3.1333334
     functionName: stopColor
     data: 
     objectReferenceParameter: {fileID: 0}
