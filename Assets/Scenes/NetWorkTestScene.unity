@@ -18091,6 +18091,7 @@ MonoBehaviour:
   pandD_btn: {fileID: 1114520876}
   buttontext: {fileID: 578616699}
   btn_check: 0
+  SafeArea: {fileID: 0}
 --- !u!61 &1630090605
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20315,7 +20316,7 @@ GameObject:
   - component: {fileID: 1875648768}
   m_Layer: 5
   m_Name: SafeArea
-  m_TagString: Untagged
+  m_TagString: Ghost_Phase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

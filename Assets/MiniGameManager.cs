@@ -21,11 +21,7 @@ namespace GVSGB
             else
             {
                 Destroy(gameObject);
-            }
-
-            
-
-            
+            }       
         }
 
 

@@ -16,23 +16,25 @@ namespace GVSGB
         private Transform taker;
 
         public bool btn_check;
+        public GameObject SafeArea;
 
 
         public static bool pickanddrop { get; set; }
 
+        GameObject uibtn; 
 
         // Use this for initialization
         void Start()
         {
             pickanddrop = false;
             pandD_btn.SetActive(false);
-
-
+            SafeArea = GameObject.FindGameObjectWithTag("Ghost_Phase");
         }
 
         // Update is called once per frame
         void Update()
         {
+            
             if (pickanddrop)
             {
 
@@ -65,7 +67,7 @@ namespace GVSGB
 
             if (collision.CompareTag("Player"))
             {
-                if(!pickanddrop)
+                if (!pickanddrop)
                 {
                     pandD_btn.SetActive(false);
                     taker = null;
@@ -76,6 +78,7 @@ namespace GVSGB
 
         public void ButtonMng()
         {
+            uibtn = SafeArea.transform.GetChild(2).gameObject;
             pickanddrop = !pickanddrop;
             if (pickanddrop)
             {
@@ -90,14 +93,13 @@ namespace GVSGB
             }
         }
 
-
-
         void PickUP()
         {
 
             transform.parent = taker;
 
             pickanddrop = true;
+            uibtn.SetActive(false);
             Debug.Log("Picked!");
         }
 
@@ -107,8 +109,9 @@ namespace GVSGB
             transform.parent = null;
             taker = null;
 
-           
+
             pickanddrop = false;
+            uibtn.SetActive(true);
             Debug.Log("Drop!");
         }
     }
