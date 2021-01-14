@@ -5262,7 +5262,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 5.895e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.83671e-39, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5764,6 +5764,15 @@ MonoBehaviour:
   sounds:
   - name: PianoRoll
     clip: {fileID: 8300000, guid: c69713efa70b5db4b93c62f5b3177fd3, type: 3}
+    AudiOutput: {fileID: -4375592762419455489, guid: fde651b430b7f024e8077c4057e0ad71,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: VOVOVO
+    clip: {fileID: 8300000, guid: b29fd37e382dafb4ca65181b9b3f24ef, type: 3}
     AudiOutput: {fileID: -4375592762419455489, guid: fde651b430b7f024e8077c4057e0ad71,
       type: 2}
     volume: 0.5
