@@ -8,9 +8,25 @@ namespace GVSGB
     [SerializeField]
     public class MiniGameManager : MonoBehaviourPun
     {
+        public static MiniGameManager instance;
 
         [SerializeField]
         public Slider Spookmeter;
+
+
+        private void Awake()
+        {
+            if (instance == null)
+                instance = this;
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            
+
+            
+        }
 
 
         void Start()

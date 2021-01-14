@@ -12,6 +12,8 @@ TagManager:
   - Sins
   - Circle
   - minigameManager
+  - BookDropPoint
+  - Book
   layers:
   - Default
   - TransparentFX
