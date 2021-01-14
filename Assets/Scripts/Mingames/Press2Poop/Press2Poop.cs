@@ -12,9 +12,7 @@ namespace GVSGB
     {
         #region Public variables
         public MingameBase miniGame;
-        public GameObject startPanel;
-        public GameObject successPanel;
-        public GameObject failPanel;
+        
         #endregion
 
         #region Private variables
@@ -25,11 +23,7 @@ namespace GVSGB
 
         #region UnityFunctions
         // Start is called before the first frame update
-        void Start()
-        {
-            startPanel.SetActive(true);           
-        }
-
+       
         // Update is called once per frame
         void Update()
         {
@@ -38,7 +32,7 @@ namespace GVSGB
                 if (miniGame.MyState == MiniGameState.NOTSTARTED)
                 {
                     miniGame.MyState = MiniGameState.INPROGRESS;
-                    startPanel.SetActive(false);
+                   
                 }
                
             }        
