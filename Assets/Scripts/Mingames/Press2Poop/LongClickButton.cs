@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using GVSGB;
 
 public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -18,7 +19,6 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [SerializeField]
     private Image fillImage;
 
-    public GameObject failScreen;
     public void OnPointerDown(PointerEventData eventData)
     {
         isPointerDown = true;
@@ -43,6 +43,8 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             {
                 if (onLongClick != null)
                 {
+                    Debug.Log("scoreInc");
+                    MiniGameManager.instance.IncreaseSpooks();
                     onLongClick.Invoke();
                 }
 
@@ -53,12 +55,12 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
     }
 
+ 
     //Resets the progress and task is failed
     private void Reset()
     {
         isPointerDown = false;
         pointerDownTimer = 0;
         fillImage.fillAmount = pointerDownTimer / holdTimeRequired;
-        failScreen.SetActive(true);
     }
 }

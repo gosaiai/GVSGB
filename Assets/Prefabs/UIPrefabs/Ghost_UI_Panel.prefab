@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4608433053361749636}
   m_Layer: 5
   m_Name: Phase
-  m_TagString: Untagged
+  m_TagString: Ghost_Phase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 4608433054847783676}
   m_Layer: 5
   m_Name: Ghost_UI_Panel
-  m_TagString: Untagged
+  m_TagString: Ghost_Phase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,6 +10,11 @@ TagManager:
   - Toilet
   - Clock
   - Sins
+  - Circle
+  - minigameManager
+  - BookDropPoint
+  - Book
+  - Ghost_Phase
   layers:
   - Default
   - TransparentFX

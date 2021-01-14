@@ -18,9 +18,9 @@ namespace GVSGB
         public PentagramPoint startPoint;
         public PentagramPoint endPoint;
         public Dictionary<PentagramPoint, PentagramPoint> ConnectionPattern;
-        public GameObject SuccessPanel;
-        public GameObject StartPanel;
-
+        public GameObject pentagram;
+        //GameObject miniGameRef;
+       // public MiniGameManager minimanager;
         #endregion
         #region properties
         public bool MouseHeldDown
@@ -73,7 +73,7 @@ namespace GVSGB
         }
         void SetUp()
         {
-            StartPanel.SetActive(false);
+           
             ConnectionPattern = new Dictionary<PentagramPoint, PentagramPoint>();
             drawingLine = Instantiate(ImageBeingDrawn, transform).GetComponent<LineRenderer>();
 
@@ -92,21 +92,28 @@ namespace GVSGB
         }
         #endregion
 
+        public void startGame()
+        {
+            pentagram.SetActive(true);
+           // miniGameRef = GameObject.FindGameObjectWithTag("minigameManager");
+          //  minimanager = miniGameRef.GetComponent<MiniGameManager>();
+        }
         #region unity methods
         private void Start()
         {
-            StartPanel.SetActive(true);
+           
             miniGame = new MingameBase();
             miniGame.MyState=MiniGameState.NOTSTARTED;
 
         }
         void Update()
         {
-            if (Input.GetMouseButtonDown(0) && miniGame.MyState != MiniGameState.INPROGRESS)
+            if (miniGame.MyState != MiniGameState.INPROGRESS)
             {
                 miniGame.MyState = MiniGameState.INPROGRESS;
                 SetUp();
             }
+
             if (miniGame.MyState == MiniGameState.INPROGRESS)
             {
                 if (Input.GetMouseButtonUp(0))
@@ -138,7 +145,8 @@ namespace GVSGB
                                 if (Is_Allconnected())
                                 {
                                     miniGame.MyState = MiniGameState.FINISHED;
-                                    SuccessPanel.SetActive(true);
+                                    Debug.Log("horha");
+                                    MiniGameManager.instance.IncreaseSpooks();
                                 }
                             }
                         }

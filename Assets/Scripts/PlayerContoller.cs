@@ -83,7 +83,7 @@ namespace GVSGB
             }
             if (activeJoyStick == null)
             {
-                FindRefrence();
+                //FindRefrence();
             }
             myRB2D.AddForce(activeJoyStick.Direction * speed * Time.fixedDeltaTime, ForceMode2D.Force);
             if (activeJoyStick.Horizontal < 0)
