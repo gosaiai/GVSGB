@@ -19376,6 +19376,12 @@ PrefabInstance:
       propertyPath: pianoRoll
       value: 
       objectReference: {fileID: 8300000, guid: c69713efa70b5db4b93c62f5b3177fd3, type: 3}
+    - target: {fileID: 3016154340576332812, guid: 0d62fadc2e193d1469a7fa4562e16fdf,
+        type: 3}
+      propertyPath: playerPrefab2
+      value: 
+      objectReference: {fileID: 5640305273710591584, guid: 9e69de8a1d01ef4458276618739ba189,
+        type: 3}
     - target: {fileID: 3016154340576332813, guid: 0d62fadc2e193d1469a7fa4562e16fdf,
         type: 3}
       propertyPath: m_LocalPosition.x

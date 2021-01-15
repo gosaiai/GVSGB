@@ -15,6 +15,8 @@ namespace GVSGB
         public static GameManager Instance;
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
+        public GameObject playerPrefab2;
+
         //public GameObject busterPrefab;
         public AudioClip pianoRoll;
         #endregion
