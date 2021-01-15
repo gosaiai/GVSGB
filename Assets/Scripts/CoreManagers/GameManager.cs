@@ -17,6 +17,8 @@ namespace GVSGB
         public GameObject playerPrefab;
         public GameObject playerPrefab2;
 
+        public Vector3 GB_SpawnPoint = new Vector3(0f,8f,-14f);
+
         //public GameObject busterPrefab;
         public AudioClip pianoRoll;
         #endregion
@@ -74,8 +76,11 @@ namespace GVSGB
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                                       
-                    PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, -14f), Quaternion.identity, 0);
+
+                    if (PhotonNetwork.IsMasterClient)
+                        PhotonNetwork.Instantiate(this.playerPrefab2.name, GB_SpawnPoint, Quaternion.identity, 0);
+                    else
+                        PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, -14f), Quaternion.identity, 0);
                     //PhotonNetwork.Instantiate(this.busterPrefab.name, new Vector3(0f, 5f, -14f), Quaternion.identity, 0);
                 }
                 else
