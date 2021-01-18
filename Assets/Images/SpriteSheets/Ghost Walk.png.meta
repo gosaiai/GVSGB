@@ -1,0 +1,602 @@
+fileFormatVersion: 2
+guid: 9811e4fd2be5d8943a780484676559ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2798468855555743257
+    second: Ghost Walk_0
+  - first:
+      213: -8195151227040715152
+    second: Ghost Walk_1
+  - first:
+      213: 2160009431199040476
+    second: Ghost Walk_2
+  - first:
+      213: 814042407220658929
+    second: Ghost Walk_3
+  - first:
+      213: 2587099770947217415
+    second: Ghost Walk_4
+  - first:
+      213: 6295290823471880964
+    second: Ghost Walk_5
+  - first:
+      213: 4524600245449021552
+    second: Ghost Walk_6
+  - first:
+      213: 1041357445303261095
+    second: Ghost Walk_7
+  - first:
+      213: -5476041253380362181
+    second: Ghost Walk_8
+  - first:
+      213: 4221876321759641521
+    second: Ghost Walk_9
+  - first:
+      213: 2457272536320320866
+    second: Ghost Walk_10
+  - first:
+      213: -4473524774668379438
+    second: Ghost Walk_11
+  - first:
+      213: 6237063384435841297
+    second: Ghost Walk_12
+  - first:
+      213: 5727441735182875003
+    second: Ghost Walk_13
+  - first:
+      213: 4077910037244862552
+    second: Ghost Walk_14
+  - first:
+      213: -7581894392104829345
+    second: Ghost Walk_15
+  - first:
+      213: -4887124066527467586
+    second: Ghost Walk_16
+  - first:
+      213: 3655677153526494639
+    second: Ghost Walk_17
+  - first:
+      213: -8811771039959309379
+    second: Ghost Walk_18
+  - first:
+      213: 9210921040820848836
+    second: Ghost Walk_19
+  - first:
+      213: 4169409797427009421
+    second: Ghost Walk_20
+  - first:
+      213: -3294569067362007924
+    second: Ghost Walk_21
+  - first:
+      213: -3181827396109652153
+    second: Ghost Walk_22
+  - first:
+      213: -2327865384604336954
+    second: Ghost Walk_23
+  - first:
+      213: -6923528617289802341
+    second: Ghost Walk_24
+  - first:
+      213: 7035457812921181871
+    second: Ghost Walk_25
+  - first:
+      213: 6025330529632399254
+    second: Ghost Walk_26
+  - first:
+      213: 3326838049740008530
+    second: Ghost Walk_27
+  - first:
+      213: -7205365449325147295
+    second: Ghost Walk_28
+  - first:
+      213: 3212375853189764282
+    second: Ghost Walk_29
+  - first:
+      213: -3970647918952520023
+    second: Ghost Walk_30
+  - first:
+      213: -1486616744217949408
+    second: Ghost Walk_31
+  - first:
+      213: 2360284866966896571
+    second: Ghost Walk_32
+  - first:
+      213: -3746333020361800670
+    second: Ghost Walk_33
+  - first:
+      213: -5655339375368919727
+    second: Ghost Walk_34
+  - first:
+      213: 4003800817790736290
+    second: Ghost Walk_35
+  - first:
+      213: -6214697414360283679
+    second: Ghost Walk_36
+  - first:
+      213: 2384440193493370163
+    second: Ghost Walk_37
+  - first:
+      213: -1190360784800366451
+    second: Ghost Walk_38
+  - first:
+      213: 7332282472277929079
+    second: Ghost Walk_39
+  - first:
+      213: -4483537101960667898
+    second: Ghost Walk_40
+  - first:
+      213: 8721075918179614995
+    second: Ghost Walk_41
+  - first:
+      213: -4877405565695114846
+    second: Ghost Walk_42
+  - first:
+      213: -70777450590443514
+    second: Ghost Walk_43
+  - first:
+      213: -1267078617558149696
+    second: Ghost Walk_44
+  - first:
+      213: -7923899746287395886
+    second: Ghost Walk_45
+  - first:
+      213: -5835345367073201597
+    second: Ghost Walk_46
+  - first:
+      213: 5289779529590930703
+    second: Ghost Walk_47
+  - first:
+      213: -8280774167631463691
+    second: Ghost Walk_48
+  - first:
+      213: -1514035837554595002
+    second: Ghost Walk_49
+  - first:
+      213: -6314175046763103473
+    second: Ghost Walk_50
+  - first:
+      213: 7340611477256143712
+    second: Ghost Walk_51
+  - first:
+      213: 6567165651245314323
+    second: Ghost Walk_52
+  - first:
+      213: -1856707083547801892
+    second: Ghost Walk_53
+  - first:
+      213: 7762460079375421806
+    second: Ghost Walk_54
+  - first:
+      213: 6227867924092895967
+    second: Ghost Walk_55
+  - first:
+      213: -8192872299313757526
+    second: Ghost Walk_56
+  - first:
+      213: 4558182806845870299
+    second: Ghost Walk_57
+  - first:
+      213: -3178307678213467810
+    second: Ghost Walk_58
+  - first:
+      213: -8090125922292743515
+    second: Ghost Walk_59
+  - first:
+      213: -2273842591513666354
+    second: Ghost Walk_60
+  - first:
+      213: -8744908168025191030
+    second: Ghost Walk_61
+  - first:
+      213: 1041187578436441687
+    second: Ghost Walk_62
+  - first:
+      213: -6079749566624054255
+    second: Ghost Walk_63
+  - first:
+      213: 3095667698084831698
+    second: Ghost Walk_64
+  - first:
+      213: -4433849646987202707
+    second: Ghost Walk_65
+  - first:
+      213: -2156318776510554820
+    second: Ghost Walk_66
+  - first:
+      213: 2466559398279400700
+    second: Ghost Walk_67
+  - first:
+      213: 1543466505097402467
+    second: Ghost Walk_68
+  - first:
+      213: 7778816019819449309
+    second: Ghost Walk_69
+  - first:
+      213: 1737475704406587808
+    second: Ghost Walk_70
+  - first:
+      213: 7103756311407966979
+    second: Ghost Walk_71
+  - first:
+      213: 4816735168975056451
+    second: Ghost Walk_72
+  - first:
+      213: -5091878969467723753
+    second: Ghost Walk_73
+  - first:
+      213: -6443959547427284361
+    second: Ghost Walk_74
+  - first:
+      213: -7751385755083907651
+    second: Ghost Walk_75
+  - first:
+      213: 1327776776454934404
+    second: Ghost Walk_76
+  - first:
+      213: -2846976398029613625
+    second: Ghost Walk_77
+  - first:
+      213: -2071926507856596643
+    second: Ghost Walk_78
+  - first:
+      213: -2917101481086001884
+    second: Ghost Walk_79
+  - first:
+      213: 7317374291105984224
+    second: Ghost Walk_80
+  - first:
+      213: -7904664760856123312
+    second: Ghost Walk_81
+  - first:
+      213: 3297819436981649507
+    second: Ghost Walk_82
+  - first:
+      213: -4483467583472560714
+    second: Ghost Walk_83
+  - first:
+      213: 1318036692754993338
+    second: Ghost Walk_84
+  - first:
+      213: 786629353472185196
+    second: Ghost Walk_85
+  - first:
+      213: 5195093589891481691
+    second: Ghost Walk_86
+  - first:
+      213: -5543480450788238115
+    second: Ghost Walk_87
+  - first:
+      213: 829436204148942250
+    second: Ghost Walk_88
+  - first:
+      213: 4587898211205928865
+    second: Ghost Walk_89
+  - first:
+      213: 2481775213334562602
+    second: Ghost Walk_90
+  - first:
+      213: 1924040404097009777
+    second: Ghost Walk_91
+  - first:
+      213: -1042216803882214250
+    second: Ghost Walk_92
+  - first:
+      213: 1255458980146074692
+    second: Ghost Walk_93
+  - first:
+      213: 2802952408877036884
+    second: Ghost Walk_94
+  - first:
+      213: -1771048629223567554
+    second: Ghost Walk_95
+  - first:
+      213: -7245131149791744538
+    second: Ghost Walk_96
+  - first:
+      213: -6233519242780675978
+    second: Ghost Walk_97
+  - first:
+      213: 1293483367766047674
+    second: Ghost Walk_98
+  - first:
+      213: 3242487092219890640
+    second: Ghost Walk_99
+  - first:
+      213: -1364591371511857588
+    second: Ghost Walk_100
+  - first:
+      213: -2408663448534128355
+    second: Ghost Walk_101
+  - first:
+      213: -4634949562628520302
+    second: Ghost Walk_102
+  - first:
+      213: 471382101863950847
+    second: Ghost Walk_103
+  - first:
+      213: 7763144149481707845
+    second: Ghost Walk_104
+  - first:
+      213: -8465408788836359016
+    second: Ghost Walk_105
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ghost Walk_0
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 24
+        width: 187
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e12b9d1767d929d0800000000000000
+      internalID: -2798468855555743257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost Walk_1
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 26
+        width: 183
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ea1a7f069f44e80800000000000000
+      internalID: -8195151227040715152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost Walk_2
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 44
+        width: 175
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3cc1a2225e9fd10800000000000000
+      internalID: 2160009431199040476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost Walk_3
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 56
+        width: 177
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2cd72a14f0c4b00800000000000000
+      internalID: 814042407220658929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost Walk_4
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 64
+        width: 176
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708adcdd88937e320800000000000000
+      internalID: 2587099770947217415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost Walk_5
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 56
+        width: 176
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b51da66ad5d5750800000000000000
+      internalID: 6295290823471880964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost Walk_6
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 44
+        width: 174
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07852ac63fb9ace30800000000000000
+      internalID: 4524600245449021552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost Walk_7
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 26
+        width: 182
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a752834415a37e00800000000000000
+      internalID: 1041357445303261095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
