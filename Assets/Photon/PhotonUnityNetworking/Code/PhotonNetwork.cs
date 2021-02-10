@@ -1531,7 +1531,7 @@ namespace Photon.Pun
         /// </remarks>
         public static bool JoinRandomRoom()
         {
-            return JoinRandomRoom(null, 5, MatchmakingMode.FillRoom, null, null);
+            return JoinRandomRoom(null, 0, MatchmakingMode.FillRoom, null, null);
         }
 
         /// <summary>
