@@ -27,9 +27,7 @@ namespace GVSGB
         [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
         [SerializeField]
         private byte maxPlayersPerRoom = 5;
-        [Tooltip("The Name and play button")]
-        [SerializeField]
-        private GameObject controlPanel;
+
         [Tooltip("The UI Label to inform the user that the connection is in progress")]
         [SerializeField]
         private GameObject progressLabel;
@@ -60,7 +58,7 @@ namespace GVSGB
         void Start()
         {
             progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
+           
             // Connect();
         }
 
@@ -79,7 +77,7 @@ namespace GVSGB
         {
 
             progressLabel.SetActive(true);
-            controlPanel.SetActive(false);
+            
             // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
             if (PhotonNetwork.IsConnected)
             {
@@ -138,7 +136,7 @@ namespace GVSGB
         {
             Debug.LogWarningFormat("PUN Basics Tutorial/Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
             progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
+           
             isConnecting = false;
         }
 
